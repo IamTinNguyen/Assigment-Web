@@ -2,51 +2,109 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T I N N</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-      crossorigin="anonymous"
+      href="//use.fontawesome.com/releases/v5.15.4/css/all.css"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>ChatCord App</title>
+
+    <link rel="stylesheet/less" type="text/css" href="css/style2.less" />
   </head>
   <body>
-    <div class="chat-container">
-      <header class="chat-header">
-        <h1><i class="fas fa-smile"></i> ChatCord</h1>
-        <a id="leave-btn" class="btn">Leave Room</a>
-      </header>
-      <main class="chat-main">
-        <div class="chat-sidebar">
-          <h3><i class="fas fa-comments"></i> Room Name:</h3>
-          <h2 id="room-name"></h2>
-          <h3><i class="fas fa-users"></i> Users</h3>
-          <ul id="users"></ul>
+    <div class="window-wrapper">
+      <div class="window-title">
+        <div class="dots">
+          <i class="fa fa-circle"></i>
+          <i class="fa fa-circle"></i>
+          <i class="fa fa-circle"></i>
         </div>
-        <div class="chat-messages"></div>
-      </main>
-      <div class="chat-form-container">
-        <form id="chat-form">
-          <input
-            id="msg"
-            type="text"
-            placeholder="Enter Message"
-            required
-            autocomplete="off"
-          />
-          <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
-        </form>
+        <div class="title">
+          <span>T I N N</span>
+        </div>
+        <div class="expand" id="leave-btn">
+          <i class="fas fa-sign-out-alt"></i>
+        </div>
+      </div>
+      <div class="window-area">
+        <div class="conversation-list">
+          <ul class="" id="RoomList">
+            <li class="item active">
+              <a href="#"
+                ><i class="fa fa-layer-group"></i> <span id="room-name"></span
+              ></a>
+            </li>
+          </ul>
+          <div class="my-account">
+            <div class="image">
+              <img src="https://i.ibb.co/y8tK4FW/avt2.png" />
+
+              <i class="fa fa-circle online"></i>
+            </div>
+            <div class="name">
+              <span id="userNameProfile"></span>
+              <i class="fa fa-angle-down"></i>
+              <span class="availability">Available</span>
+            </div>
+          </div>
+        </div>
+        <div class="chat-area">
+          <div class="title">
+            <b>Conversation title</b><i class="fa fa-search"></i>
+          </div>
+          <div class="chat-list">
+            <ul id="users"></ul>
+            <div class="chat-messages"></div>
+          </div>
+          <form id="chat-form">
+            <div class="input-area">
+              <div class="input-wrapper">
+                <input
+                  id="msg"
+                  type="text"
+                  placeholder="Enter Message"
+                  required
+                  autocomplete="off"
+                />
+                <i class="fa fa-smile-o"></i>
+              </div>
+              <input type="submit" value="submit" class="send-btn" />
+            </div>
+          </form>
+        </div>
+        <div class="right-tabs">
+          <ul class="tabs">
+            <li class="active">
+              <a href="#"><i class="fa fa-users"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-paperclip"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-link"></i></a>
+            </li>
+          </ul>
+          <ul class="tabs-container">
+            <li class="active">
+              <ul class="member-list" id="userOnChat"></ul>
+            </li>
+            <li></li>
+            <li></li>
+          </ul>
+          <i class="fa fa-cog"></i>
+        </div>
       </div>
     </div>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
-      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
-      crossorigin="anonymous"
-    ></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="js/main.js"></script>
   </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+    integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+    crossorigin="anonymous"
+  ></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
 </html>
